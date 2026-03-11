@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open /Users/daront/Desktop/ClaudeCode/chess.html)",
+      "Bash(gh repo:*)",
+      "Bash(gh api:*)"
+    ]
+  }
+}
