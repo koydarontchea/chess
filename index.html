@@ -45,6 +45,7 @@
             display: flex;
             gap: 6px;
             align-items: flex-start;
+            order: 2;
         }
 
         .rank-col { display: flex; flex-direction: column; }
@@ -504,6 +505,12 @@ function updateCpuBadges() {
     const cpuColor = playerColor === 'white' ? 'black' : 'white';
     document.getElementById('white-cpu-badge').style.display = (cpuMode && cpuColor === 'white') ? 'inline' : 'none';
     document.getElementById('black-cpu-badge').style.display = (cpuMode && cpuColor === 'black') ? 'inline' : 'none';
+
+    // Flip bars so the player's bar is always at the bottom
+    const onTop = playerColor === 'black' ? 'white-bar' : 'black-bar';
+    const onBottom = playerColor === 'black' ? 'black-bar' : 'white-bar';
+    document.getElementById(onTop).style.order = '1';
+    document.getElementById(onBottom).style.order = '3';
 }
 
 // ── Attack detection ──────────────────────────────────────────────────────────
